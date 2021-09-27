@@ -1,0 +1,44 @@
+@mixin flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin mq($size){
+    @media only screen and (min-width: $size){
+        @content;
+    }
+}
+
+
+@mixin grow{
+    @keyframes overlay-grow{
+        from{
+            background-color: rgba(0,0,0,0);
+            font-size:0 ;
+        }
+        to{
+            background-color: rgba(33, 129, 9, 0.8);
+            font-size:5em ;
+        }
+    
+    }
+}
+
+@mixin dance{
+    @keyframes dance {
+        0% {
+            transform: rotate(0)
+        }
+        25%{
+            transform:  rotate(-30deg)
+        }
+        75% {
+            transform: rotate(30deg)
+        }
+        100% {
+            transform: rotate(0)
+        }
+  
+    }
+}

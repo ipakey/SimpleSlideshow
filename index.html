@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Slideshow</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <img class='visible' name='slideq' width='400' height="250">
     <img class='invisible' name='slidea' width='400' height="250">
     <button class='button' id="check">Check Answer</button>
-    <button class='button' id="yes">Got it Right</button>
-    <button class='button' id="no">Not this time</button>
+    <button class='main-results__incorrect main-results__button-yes' id="yes">Got it Right <span class="material-icons">sentiment_satisfied_alt</span></button>
+    <button class='main-results__incorrect main-results__button-no' id="no">Not this times <span class="material-icons">sentiment_dissatisfied</span></button>
     <button class='button' id="submit">'Next card '&#8250;</button>
 
 
