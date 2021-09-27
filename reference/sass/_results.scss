@@ -130,7 +130,7 @@
         height: 175px;
     }
     .main-results{
-        font-size: 1rem;
+        font-size: 25px;
     }
 
     .main-results__input,
@@ -143,7 +143,7 @@
 
 @include mq(1200px){
     .card{
-        width:100px;
-        height:100px;
+        width:650px;
+        height:400px;
     }   
 }

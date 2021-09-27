@@ -4,6 +4,7 @@ images = [];
 var time = 1000;
 var x = 0;
 
+
 //Image List
 images = [
     ['./images/landscape1.png','./images/landscape2.png'],
@@ -16,7 +17,7 @@ images = [
 // Change Image
 function changeImg(){
     slideq = document.slideq.src=images[i][0];
-    slidea = document.slidea.src=images[i][1];
+    slidea = images[i][1];
     if(x < 10){
         if(i < images.length - 1){
             i++;
@@ -26,17 +27,22 @@ function changeImg(){
             i=0;
             x++;
         }
-        setTimeout("changeImg()", time);
+        //setTimeout("changeImg()", time);
     }
 }
 
-function flipCard(){
-    
+
+
+function resetCard(){
+    document.slideq.classList.remove('card-back');
 }
 
-function viewCardBacks(){
-    slidea.classList.remove('invisible');
-    slidea.classList.add('visible');
+function checkAnswer(){
+    document.slideq.classList.add('card-back');
+    document.slideq = slidea;
+    setTimeout("checkAnswer()", time);
+    resetCard();
+
 }
 
 window.onload - changeImg();

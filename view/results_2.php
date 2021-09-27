@@ -95,15 +95,15 @@
 
 <section class='main-results__form'>
 <!-- *************** Card to display **************************-->
-   <img class='visible' name='slideq' width='400' height="250">
-  <img class='invisible' name='slidea' width='400' height="250">
+   <img class='card' name='slideq'>
+  <!--<img class='invisible' name='slidea'> -->
   
   
  <!-- ****************Navigation Buttons **********************-->
-  <button class='button' id="check">Check Answer</button>
+  <button class='main-results__button' onclick="checkAnswer()" id="check">Check Answer</button>
     <button class='main-results__incorrect main-results__button-yes' id="yes">Got it Right <span class="material-icons">sentiment_satisfied_alt</span></button>
     <button class='main-results__incorrect main-results__button-no' id="no">Not this times <span class="material-icons">sentiment_dissatisfied</span></button>
-    <button class='button' id="submit">'Next card '&#8250;</button>
+    <button class='main-results__button' id="submit">'Next card '&#8250;</button>
 
 
 </section>
