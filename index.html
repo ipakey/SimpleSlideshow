@@ -7,48 +7,15 @@
     <title>Simple Slideshow</title>
 </head>
 <body>
-    <img name='slideq' width='400' height="250">
-    <img name='slidea' width='400' height="250">
-    <button id="yes">Got it Right</button>
-    <button id="no">Not this time</button>
-    <button id="submit">Next card</button>
+    <img class='visible' name='slideq' width='400' height="250">
+    <img class='invisible' name='slidea' width='400' height="250">
+    <button class='button' id="check">Check Answer</button>
+    <button class='button' id="yes">Got it Right</button>
+    <button class='button' id="no">Not this time</button>
+    <button class='button' id="submit">'Next card '&#8250;</button>
 
 
-    <script>
-        var i=0;
-        images = [];
-
-        var time = 1000;
-        var x = 0;
-
-        //Image List
-        images = [
-            ['landscape1.png','landscape2.png'],
-            ['landscape2.png','landscape3.png'],
-            ['landscape3.png','landscape4.png'],
-            ['landscape4.png','landscape5.png']
-        ];  
-
-
-        // Change Image
-        function changeImg(){
-            slideq = document.slideq.src=images[i][0];
-            slidea = document.slidea.src=images[i][1];
-            if(x < 10){
-            if(i < images.length - 1){
-                i++;
-                x++;
-            }
-            else{
-                i=0;
-                x++;
-            }
-            setTimeout("changeImg()", time);
-        }
-        }
-
-        window.onload - changeImg();
-    </script>
+<script src="simpleSlideshow.js"></script>
 
 
 

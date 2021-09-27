@@ -1,0 +1,24 @@
+@include @keyframes (overlay-grow){
+    from{
+        background-color: rgba(0,0,0,0);
+        font-size:0 ;
+    }
+    to{
+        background-color: rgba(33, 129, 9, 0.8);
+        font-size:5em ;
+    }
+animation-duration: 100ms;
+}
+
+@keyframes (dance) {
+    0% 100% {
+        transform: rotate(0);
+    }
+    25%{
+        transform: rotate(-30deg);
+    }
+    75% {
+        transform: rotate(30deg);
+    }
+animation-duration: 500ms;
+}
