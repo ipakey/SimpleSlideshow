@@ -12,8 +12,6 @@
 .main-results__container{
     @include flexCenter ;
     flex-direction: column;
-    
-
 }
 
 .main-results__form{
@@ -36,11 +34,12 @@
     transition: transform 0.6s ease-in-out;
     transform-style: preserve-3d;
 }
-
+/*
 .card:hover,
 .card:focus{
     transform: rotateY(180deg);
 }
+*/
 
 .card-front,
 .card-back{
@@ -62,26 +61,25 @@
 .card-back{
     background: $header-color;
     color: $header-bg;
-    transform: rotateY(180deg);
-    width: 150px;
-    height:150px;
+    //transform: rotateY(180deg);
+    min-width: 150px;
+    min-height:150px;
     @include flexCenter;
 }
 
-.main-results__input
-{
+.main-results__input{
     @include flexCenter;
-    display: inline-block;
+    flex-direction: column;
     font-family: 'Abel', sans-serif;
     font-size: 0.8rem;
     letter-spacing: 0.05em;
     padding: 0.25em;
     border-radius: 15px ridge black;
-    width: 45%;
+    display:flex;
     min-height: 120px;
     text-align: center;
     margin-top: 10px;   
-    text-align: center;
+    
 }
 
 
@@ -89,24 +87,16 @@
      background: $result-button-no;
 }
 
-
-
 .main-results__correct{
      background: $result-button-yes;
 }
-
-
-
 
 .main-results__input:focus,
 .main-results__button:focus{
     outline: none;
     box-shadow: $shadow;
+
 }
-
-
-
-
 
 .game-info{
     justify-content: space-between;
@@ -135,9 +125,11 @@
 
     .main-results__input,
     .main-results__button{
+        flex-direction: row;
+        display: flex;
         font-size: 2rem;
-        width:50px;
-        height:50px;
+        width: 22%;
+        min-height:50px;
     }
 }
 
@@ -145,5 +137,16 @@
     .card{
         width:650px;
         height:400px;
-    }   
+    }  
+    .main-results{
+        font-size: 25px;
+    }
+
+    .main-results__input,
+    .main-results__button{
+        flex-direction: row;
+        font-size: 2rem;
+        width:90px;
+        min-height:50px;
+    }
 }
