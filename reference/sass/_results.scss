@@ -1,6 +1,6 @@
 
 .main-results{
-    width: 100%;
+    //width: 100%;
     @include flexCenter;
     font-size: .25em;
     display: flex;
@@ -61,7 +61,6 @@
 .card-back{
     background: $header-color;
     color: $header-bg;
-    //transform: rotateY(180deg);
     min-width: 150px;
     min-height:150px;
     @include flexCenter;
@@ -69,7 +68,7 @@
 
 .main-results__input{
     @include flexCenter;
-    flex-direction: column;
+    flex-direction: row;
     font-family: 'Abel', sans-serif;
     font-size: 0.8rem;
     letter-spacing: 0.05em;

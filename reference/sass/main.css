@@ -186,7 +186,7 @@ body {
 }
 
 .main-results {
-  width: 100%;
+  //width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -263,12 +263,7 @@ body {
           transform-style: preserve-3d;
 }
 
-/*
-.card:hover,
-.card:focus{
-    transform: rotateY(180deg);
-}
-*/
+
 .card-front,
 .card-back {
   position: absolute;
