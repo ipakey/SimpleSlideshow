@@ -5,7 +5,7 @@
 }
 
 .header, .footer{
-    background-color: $header-bg;
+    background: $header-bg;
     color: $header-color;
     font-size: 0.5rem;
     width:100%;
@@ -17,7 +17,7 @@
     position: fixed;
     height: 60px;
     top: calc(100vh - 60px);
-    //bottom: 0;
+    bottom: 0;
     left:0;
     @include flexCenter;
     font-size: 0.6rem;
@@ -42,7 +42,7 @@
     }
 }
 
-@include mq(1024){
+@include mq(1020px){
     .title-break{
         display: none;
     }

@@ -7,8 +7,8 @@
         <form class="main-entry__form" action="<?php htmlentities($_SERVER['PHP_SELF'])  ?>" method="GET">
         
             <select 
-                class="main-entry__input"
-                id="cards"
+                class='main-entry__input'
+                id="cardSet"
                 name="set"
                 aria-labelledby="enterSetUnits"
                 type="text"
@@ -20,11 +20,13 @@
                 <option value="hundreds">Hundreds</option>
             
             </select>
-                
+
+                            
             <button class="main-entry__button">Go!</button>
 
         </form>
 
     </div>
 
+    <script src="./scrpt/script.js"></script>
 </main>

@@ -1,5 +1,5 @@
 <?php
-    $number = filter_input(INPUT_GET,'set', FILTER_SANITIZE_ENCODED);
+    $cardset = filter_input(INPUT_GET,'set', FILTER_SANITIZE_ENCODED);
 
 ?>
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
 <body>
 
     <?php include("./view/header.php");
-        if($number){
+        if($cardset){
             include("./view/results_2.php");
         }
         else{
@@ -25,6 +25,8 @@
         }
      include("./view/footer.php");
      ?>
+
+     
 </body>
 </html>
 

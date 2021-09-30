@@ -1,5 +1,5 @@
 <footer class="footer">
-    <?php if($number){ ?>
+    <?php if($cardset){ ?>
         <a href="index.php">Click here to play again</a>
 
 <?php }
