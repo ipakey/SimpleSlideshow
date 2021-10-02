@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -41,7 +40,7 @@ body {
 }
 
 .header, .footer {
-  background-color: #08925d;
+  background: #08925d;
   color: #fff;
   font-size: 0.5rem;
   width: 100%;
@@ -53,6 +52,7 @@ body {
   position: fixed;
   height: 60px;
   top: calc(100vh - 60px);
+  bottom: 0;
   left: 0;
   display: flex;
   justify-content: center;
@@ -79,41 +79,229 @@ body {
     font-size: 0.8rem;
   }
 }
-@media only screen and (min-width: 1024) {
+@media only screen and (min-width: 1020px) {
   .title-break {
     display: none;
   }
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 24px;
-  font-family: "Roboto", sans-serif;
-}
-
-body {
+.main-entry {
   width: 100%;
-  min-height: 100vh;
-  background: #aceed5;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 0.5rem;
+  margin-top: 1rem;
+}
+
+.main-entry__form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 60px;
 }
 
-.main-overlay {
+.main-entry__input,
+.main-entry__button {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  padding: 0.25em;
+  border-radius: 15px;
+  width: 100%;
+  height: 73px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.main-entry__button {
+  background: limegreen;
+  color: #fff;
+}
+
+.main-entry__input:focus,
+.main-entry__button:focus {
+  outline: none;
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (min-width: 768px) {
+  .main-entry {
+    font-size: 1rem;
+  }
+
+  .main-entry__input,
+.main-entry__button {
+    font-size: 1.5rem;
+    width: 100%;
+    height: 150px;
+  }
+}
+.card {
+  position: relative;
+  transform: -270deg;
+  scale: 0.5;
+  height: 175px;
+  width: 150px;
+}
+
+.card-inner {
+  position: relative;
+  transform: -270deg;
+  scale: 0.5;
+  width: 200px;
+  height: 150px;
+}
+
+.card-outer {
+  position: relative;
+  transform: -270deg;
+  scale: 0.5;
+  width: 200px;
+  height: 150px;
+}
+
+.card:hover {
+  cursor: url("Assets/Cursors/bluePoint.cur"), auto;
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  scale: 0.6;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  border-width: 1px;
+  border-style: solid;
+  transition: transform 500ms ease-in-out;
+}
+
+.card.visible .card-back {
+  transform: rotateY(-180deg);
+}
+
+.card.visible .card-front {
+  transform: rotateY(0deg);
+}
+
+.card.matched .card-value {
+  animation: dance 1s linear 1000ms;
+}
+
+.overlay-text {
   display: none;
-}
-
-.container {
-  display: flex;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   justify-content: center;
   align-items: center;
+  z-index: 100;
+  color: #B0B3D3;
+  font-family: Creepy, serif;
+}
+
+.overlay-text.visible {
+  display: flex;
   flex-direction: column;
-  margin: auto;
+  animation: overlay-grow 500ms forwards;
+}
+
+.overlay-text-small {
+  font-size: 0.3em;
+}
+
+@keyframes overlay-grow {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+    font-size: 0;
+  }
+  to {
+    background-color: rgba(33, 129, 9, 0.8);
+    font-size: 5em;
+  }
+}
+@keyframes dance {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-30deg);
+  }
+  75% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+.card-back {
+  background-color: white;
+  border-color: #DFE0EE;
+}
+
+.card-front {
+  transform: rotateY(180deg);
+  background-color: white;
+  border-color: blue;
+}
+
+.card-value {
+  transform: scale(0.8);
+  transition: transform 100ms ease-in-out;
+}
+
+.card-front:hover .card-value {
+  transform: scale(0.9);
+}
+
+.corner {
+  position: absolute;
+  width: 47px;
+  height: 47px;
+}
+
+.card-face:hover .corner {
+  width: 42px;
+  height: 42px;
+}
+
+.corner-top-left {
+  top: 0;
+  left: 0;
+}
+
+.corner-bottom-left {
+  transform: rotate(270deg);
+  bottom: 0;
+  left: 0;
+}
+
+.corner-top-right {
+  transform: scaleX(-1);
+  top: 0;
+  right: 0;
+}
+
+.corner-bottom-right {
+  transform: rotate(270deg) scaleY(-1);
+  bottom: 0;
+  right: 0;
+}
+
+.blue-logo {
+  height: 80px;
+  width: 80px;
+  position: center;
+}
+
+.card-back:hover .blue-logo {
+  transform: scale(1.4);
 }

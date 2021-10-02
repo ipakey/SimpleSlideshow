@@ -55,17 +55,18 @@
 
 <!--********************** results buttons ***************-->
   <div class="game-info">
-  <button class="main-results__correct">Got it Right!<span class="material-icons"> sentiment_satisfied_alt</span></button>
-  <button class="main-results__incorrect">Not this time<span class="material-icons">sentiment_dissatisfied </span></button>
+  <button class="main-results__go" id='chkAnswer'>Check Answer? </button>
+  <button class="main-results__correct" id='corAnswer'>Got it Right!<span class="material-icons"> sentiment_satisfied_alt</span></button>
+  <button class="main-results__incorrect" id='incAnswer'>Not this time<span class="material-icons">sentiment_dissatisfied </span></button>
   </div>
      
 <!--********************** navigation arrows ***************-->
   <div class="navigation">
-    <a href="#" class="previous">&laquo;</a>
-    <a href="#" class="previous round">&#8249;</a>
-    <a class="navigation__text">Cards</a>
-    <a href="#" class="next round"> &#8250; </a>
-    <a href="#" class="next">&raquo;</a>
+    <a href="#" class="results-navigation__arrow" id='fCard'>&laquo;</a>
+    <a href="#" class="results-navigation__arrow" id='pCard'>&#8249;</a>
+    <a class="results-navigation__text">Cards</a>
+    <a href="#" class="results-navigation__arrow" id='nCard'> &#8250; </a>
+    <a class="results-navigation__arrow" id='lCard'>&raquo;</a>
   </div>
 <section>
 
@@ -77,8 +78,10 @@
 <?php  
   for ($p=0; $p < $lengthSet; $p++){
     $o = $order[$p];
-    echo $cards[$o]['question'];
+    echo $cards[$o]['question'].' : '.$cards[$o]['answer'];
+  
   }
+  $cardValue = "startValue";
 ?>
 
 
@@ -90,18 +93,48 @@
 
 
 <section class='main-results__form'>
-<div class='card'>  
- <div class='card-back card-face' id="card-back">
-    <img class='blue-logo'
-    src='./Images/landscape2.png'>            
-  </div>
-  <div class='card-back card-face' id="card-front">
-    <div class='card-front card-face' >
-          <img class='card-value' alt='eight'
-          src='./Images/landscape3.png'>   
-      </div>            
-  </div>
-</div>
+  
+    <div class='card'>
+      <div class='card-back card-face'>
+          <img class='corner corner-top-left'
+          src='./Corners/corner_black.png'>
+          
+          <img class='corner corner-top-right'
+          src='./Corners/corner_black.png'>
+          
+          <img class='corner corner-bottom-left'
+          src='./Corners/corner_black.png'>
+          
+          <img class='corner corner-bottom-right'
+          src='./Corners/corner_black.png'>
+                
+          <a id="cardValue"></a>
+  <?php  
+
+
+    echo $cardValue;
+  
+?>           
+            </div>
+            
+            
+            <div class='card-front card-face'>
+                <img class='corner corner-top-left'
+                src='./Corners/corner_black.png'>
+                
+                <img class='corner corner-top-right'
+                src='./Corners/corner_black.png'>
+                
+                <img class='corner corner-bottom-left'
+                src='./Corners/corner_black.png'>
+                
+                <img class='corner corner-bottom-right'
+                src='./Corners/corner_black.png'>
+                
+                <img class='card-value' alt='eight'
+                src='./Images/eight.jpg'>   
+            </div>            
+        </div>
 
 </section>
 
@@ -109,6 +142,6 @@
 
 
 </main>
-<script src="script.js"></script>
+<script src="./scrpt/script.js"></script>
 
 
