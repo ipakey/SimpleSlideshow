@@ -57,3 +57,72 @@ function wrongAnswer(){
     });
 }
 
+function endSet(){
+    console.log('wrong answer button pressed');
+
+}
+
+function start(){
+    document.getElementById('startGame').addEventListener('click',ready());
+}
+
+function ready(){
+    // get path of correct set of chosen data
+
+    $set = $_GET['set'];
+    //echo' Set chosen : '.$set;
+      $path = "./data/";
+      $path+= $set;
+      $path+= ".json";
+    echo ($path);
+      $order = [];
+      $cards = json_decode(file_get_contents($path), true);
+      $cards_json = json_encode($cards);
+    
+    echo ($cards_json);
+      $lengthSet = count($cards);
+      $i = 0;
+      while($i < $lengthSet){
+        array_push($order, $i);
+        $i++;
+      }
+      shuffle($order);
+    console.log($order);
+    console.log($cards);
+
+	// load overlays and cards and create Arrays of data
+	
+	let overlays = Array.from(document.getElementsByClassName('overlay-text'));
+    console.log(overlays);
+	let cards = Array.from($path);
+	console.log(cards);
+	let totalTime= document.getElementById('time-remaining');
+	let game = new Flashcard_Set(100, cards);
+	
+ 		overlays.forEach(overlay => {
+			overlay.addEventListener('click', () => {
+				overlay.classList.remove('visible');
+				game.startGame();								//Will start //game play when defined
+			let audioController = new AudioController();						
+													
+			});
+		});
+		cards.forEach(card => {														
+			card.addEventListener('click', ()=> {
+				console.log();
+				game.flipCard(card);			//Will flip a card when defined			
+
+			});
+		});
+}
+
+if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', start());
+}
+else{
+    start();
+}
+
+
+
+

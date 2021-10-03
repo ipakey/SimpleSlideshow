@@ -208,6 +208,14 @@ body {
   margin-top: 1rem;
 }
 
+.navigation {
+  width: 80%;
+}
+
+.navigation__arrow {
+  font-size: 0.5rem;
+}
+
 .main-results__form {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -234,21 +242,21 @@ body {
   width: 100%;
   max-height: 73px;
   text-align: center;
-  margin-top: 20px;
+  margin: 20px;
 }
 
-.main-results__button {
+.button__go {
   background: limegreen;
   color: #fff;
 }
 
-.main-results__correct {
-  background: limegreen;
+.button__correct {
+  background: #f0cd1f;
   color: #fff;
 }
 
-.main-results__incorrect {
-  background: limegreen;
+.button__incorrect {
+  background: darkgreen;
   color: #fff;
 }
 
@@ -257,6 +265,23 @@ body {
   outline: none;
   -webkit-box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
           box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+.game-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-items: stretch;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.game-info {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.2rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -276,8 +301,8 @@ body {
   -webkit-transform: -270deg;
           transform: -270deg;
   scale: 0.5;
-  height: 175px;
-  width: 150px;
+  height: 450px;
+  width: 600px;
 }
 
 .card-inner {
@@ -285,8 +310,8 @@ body {
   -webkit-transform: -270deg;
           transform: -270deg;
   scale: 0.5;
-  width: 200px;
-  height: 150px;
+  width: 400px;
+  height: 5500px;
 }
 
 .card-outer {
@@ -294,12 +319,8 @@ body {
   -webkit-transform: -270deg;
           transform: -270deg;
   scale: 0.5;
-  width: 200px;
-  height: 150px;
-}
-
-.card:hover {
-  cursor: url("Assets/Cursors/bluePoint.cur"), auto;
+  width: 600px;
+  height: 450px;
 }
 
 .card-face {

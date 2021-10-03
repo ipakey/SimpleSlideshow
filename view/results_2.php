@@ -17,28 +17,7 @@
   
 </section>
 
-<!--************************* get selected set data ************************-->
-<?php  
-  $set = $_GET['set'];
-//echo' Set chosen : '.$set;
-  $path = "./data/";
-  $path.= $set;
-  $path.= ".json";
-//echo $path;
-  $order = [];
-  $cards = json_decode(file_get_contents($path), true);
-  $cards_json = json_encode($cards);
-//echo $cards_json;
-  $lengthSet = count($cards);
-  $i = 0;
-  while($i < $lengthSet){
-    array_push($order, $i);
-    $i++;
-  }
-  shuffle($order);
-//var_dump($order);
-//var_dump($cards);
-?>
+
 
 <!--************************* game page ************************-->
 <main class="main-results" aria-label="flash card container">
@@ -54,10 +33,10 @@
  
 
 <!--********************** results buttons ***************-->
-  <div class="game-info">
-  <button class="main-results__go" id='chkAnswer'>Check Answer? </button>
-  <button class="main-results__correct" id='corAnswer'>Got it Right!<span class="material-icons"> sentiment_satisfied_alt</span></button>
-  <button class="main-results__incorrect" id='incAnswer'>Not this time<span class="material-icons">sentiment_dissatisfied </span></button>
+  <div class="game-buttons">
+  <button class="main-results__button  button__go" id='chkAnswer'>Check Answer? </button>
+  <button class="main-results__button button__correct" id='corAnswer'>Got  it  right  <span class="material-icons title-break"> sentiment_satisfied_alt</span></button>
+  <button class="main-results__button button__incorrect" id='incAnswer'>Not this time<span class="material-icons title-break">sentiment_dissatisfied </span></button>
   </div>
      
 <!--********************** navigation arrows ***************-->
@@ -72,23 +51,6 @@
 
 
 <!--*****************end of next previous arrows ***************-->
-
-<!--***************** Select Card Display ***************-->
-
-<?php  
-  for ($p=0; $p < $lengthSet; $p++){
-    $o = $order[$p];
-    echo $cards[$o]['question'].' : '.$cards[$o]['answer'];
-  
-  }
-  $cardValue = "startValue";
-?>
-
-
-<!--***************** End of Select Card Display ***************-->
-
-
-<!--***************** Main Card Display ***************-->
 
 
 
@@ -109,12 +71,7 @@
           src='./Corners/corner_black.png'>
                 
           <a id="cardValue"></a>
-  <?php  
-
-
-    echo $cardValue;
-  
-?>           
+        
             </div>
             
             
@@ -132,7 +89,7 @@
                 src='./Corners/corner_black.png'>
                 
                 <img class='card-value' alt='eight'
-                src='./Images/eight.jpg'>   
+                src='./Images/logo_trans.png'>   
             </div>            
         </div>
 

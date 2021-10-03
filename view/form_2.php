@@ -22,7 +22,7 @@
             </select>
 
                             
-            <button class="main-entry__button">Go!</button>
+            <button class="main-entry__button" id='startGame'>Go!</button>
 
         </form>
 
